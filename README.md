@@ -9,7 +9,7 @@
 ## Quick Start
 ```bash
 pip install -r requirements.txt
-jupyter notebook analysis.ipynb
+jupyter notebook analysis.ipynb```
 
 
 ## Files
