@@ -9,20 +9,34 @@
 ## Quick Start
 ```bash
 pip install -r requirements.txt
-jupyter notebook notebooks/analysis.ipynb
-```
+jupyter notebook analysis.ipynb
+
 
 ## Files
-- `notebooks/analysis.ipynb` — EDA, metrics, test, recommendations.
-- `sql/queries.sql` — Core tables, metrics, and test-ready extracts.
-- `data/sample.csv` — Tiny, anonymized sample with the same columns.
-- `reports/dashboard.png` — Placeholder; replace with a real chart/screenshot.
+- `analysis.ipynb — EDA, metrics, hypothesis test, recommendation.
+- `squeries.sql — Core tables/metrics and test-ready extracts.
+- `sample.csv — Tiny, anonymized sample with the same columns.
+- `schema.json — Column names, types, and notes.
+- `dashboard.png — Chart exported from the notebook.
 
 ## Results (TL;DR)
-- **+3.1% absolute lift** in conversion (example).
+- **+18.23% absolute lift** in conversion (test worse than control).
 - No significant change in AOV (example).
-- **Recommendation:** Roll out to 100% with guardrail on bounce rate.
+- Statistically significant: z = 2.37, p = 0.0089.
+- **Recommendation:** Do not roll out the new checkout. Pause and investigate drivers of the drop (traffic mix, implementation bugs, device/OS splits, and guardrails like bounce rate & page speed). Re-run with tighter instrumentation.
 
 ## Reproduce
-- Run `sql/queries.sql` to generate `experiment_summary`.
-- Open `analysis.ipynb`; update `DATA_PATH` if needed; run all cells.
+- Open analysis.ipynb and run all cells.
+- Data used in the notebook:
+https://raw.githubusercontent.com/MustafaDabbagh1/ecommerce-ab-test/main/sample.csv
+
+
+## Open Notebook
+
+Nbviewer (fast render): https://nbviewer.org/github/MustafaDabbagh1/ecommerce-ab-test/blob/main/analysis.ipynb
+
+Colab (run in cloud): https://colab.research.google.com/github/MustafaDabbagh1/ecommerce-ab-test/blob/main/analysis.ipynb
+
+
+```Then click **Commit changes**.
+::contentReference[oaicite:0]{index=0}
